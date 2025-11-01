@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BeyondControl — One Pager</title>
+  <!-- Performance: early connections -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:,">
+  <meta name="color-scheme" content="dark light">
+</head>
+<body class="theme-dark">
+  <!-- Ambient background layers -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-aurora" aria-hidden="true"></div>
+  <div class="bg-scanlines" aria-hidden="true"></div>
+
+  <!-- NAVBAR -->
+  <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark sticky-top nav-fat bg-elev-2 neon-border" aria-label="Primary">
+    <div class="container position-relative">
+      <a class="navbar-brand mx-auto mx-lg-0 position-lg-absolute start-lg-50 translate-middle-lg-x" href="#home">
+        <span class="brand-mark me-2"></span><span class="logo-text">BeyondControl</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarMain">
+        <ul class="navbar-nav align-items-lg-center gap-lg-3 nav-underline">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#members">Members</a></li>
+          <li class="nav-item"><a class="nav-link" href="#games">Games</a></li>
+          <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="section-hero d-flex align-items-center justify-content-center text-center text-light">
+    <div class="container">
+      <div class="hero-inner mx-auto">
+        <div class="crest glow-pulse mb-4" aria-hidden="true"></div>
+        <h1 class="hero-title mb-3">All your <span class="animated-gradient">guild & gaming</span><br> needs met in one place.</h1>
+        <p class="lead text-muted-strong mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="d-flex justify-content-center gap-3 mb-4 flex-wrap">
+          <a href="#members" class="btn btn-neo btn-lg">Meet the Members</a>
+          <a href="#games" class="btn btn-neo-outline btn-lg">Explore Games</a>
+        </div>
+        <div class="hero-badges" aria-label="Highlights">
+          <span class="chip">No ads</span><span class="chip">Zero paywalls</span><span class="chip">Friendly</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MEMBERS -->
+  <section id="members" class="py-5 section bg-band">
+    <div class="container">
+      <div class="d-lg-flex align-items-end justify-content-between mb-4 gap-3">
+        <div>
+          <h2 class="fw-bold text-light section-heading mb-1"><span>Member Hall</span></h2>
+          <p class="text-muted-strong mb-0">Choose your hero — tap for details.</p>
+        </div>
+        <div class="d-flex gap-2 flex-wrap" role="toolbar" aria-label="Member filters">
+          <button class="btn btn-neo-outline btn-sm filter-btn active" data-filter="all">All</button>
+          <button class="btn btn-neo-outline btn-sm filter-btn" data-filter="leader">Guild Leader</button>
+          <button class="btn btn-neo-outline btn-sm filter-btn" data-filter="guardian">Guardians</button>
+          <button class="btn btn-neo-outline btn-sm filter-btn" data-filter="senior">Seniors</button>
+          <button class="btn btn-neo-outline btn-sm filter-btn" data-filter="member">Members</button>
+        </div>
+      </div>
+      <div class="row g-3" id="memberGrid"></div>
+    </div>
+  </section>
+
+  <!-- MEMBER MODAL -->
+  <div class="modal fade" id="memberModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content card-panel card-neo">
+        <div class="modal-header border-0">
+          <h5 class="modal-title text-light" id="memberName">Member</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-5">
+              <div class="ratio ratio-1x1 rounded overflow-hidden border-0">
+                <img id="memberImg" src="" class="object-fit-cover rounded" alt="">
+              </div>
+            </div>
+            <div class="col-md-7">
+              <span class="badge bg-label mb-2" id="memberRole">Role</span>
+              <p class="text-muted-strong mb-4" id="memberDesc">Lorem ipsum dolor sit amet.</p>
+              <div class="row g-3">
+                <div class="col-6"><div class="stat-box"><div class="stat-label">Games</div><div class="stat-val">142</div></div></div>
+                <div class="col-6"><div class="stat-box"><div class="stat-label">Win Rate</div><div class="stat-val">58%</div></div></div>
+                <div class="col-6"><div class="stat-box"><div class="stat-label">MVPs</div><div class="stat-val">37</div></div></div>
+                <div class="col-6"><div class="stat-box"><div class="stat-label">Achievements</div><div class="stat-val">12</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-0"><button class="btn btn-neo-outline" data-bs-dismiss="modal">Close</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GAMES -->
+  <section id="games" class="py-5 section">
+    <div class="container">
+      <div class="d-lg-flex align-items-end justify-content-between mb-4 gap-3">
+        <div class="text-center text-lg-start">
+          <h2 class="fw-bold text-light section-heading mb-1"><span>Game Library</span></h2>
+          <p class="text-muted-strong mb-0">Browse by genre and discover what we play together.</p>
+        </div>
+        <div class="d-flex gap-2 flex-wrap filter-bar" role="toolbar" aria-label="Game filters">
+          <button class="btn btn-neo-outline btn-sm game-filter active" data-filter="all">All</button>
+          <button class="btn btn-neo-outline btn-sm game-filter" data-filter="moba">MOBA</button>
+          <button class="btn btn-neo-outline btn-sm game-filter" data-filter="mmorpg">MMORPG</button>
+          <button class="btn btn-neo-outline btn-sm game-filter" data-filter="fps">FPS</button>
+          <button class="btn btn-neo-outline btn-sm game-filter" data-filter="cosy">COSY</button>
+          <button class="btn btn-neo-outline btn-sm game-filter" data-filter="strategy">STRATEGY</button>
+        </div>
+      </div>
+
+      <div class="row g-4" id="gameGrid">
+        <!-- 12 Cards -->
+        <template id="gameCardTpl">
+          <div class="col-sm-6 col-lg-4">
+            <div class="game-card card-panel card-neo h-100">
+              <div class="ratio ratio-16x9 rounded overflow-hidden border-0">
+                <img class="object-fit-cover d-block" alt="">
+              </div>
+              <div class="p-3">
+                <h5 class="text-light mb-1"></h5>
+                <div class="small text-muted-strong mb-2 genre"></div>
+                <p class="text-muted-strong mb-3 desc"></p>
+                <a href="#" class="btn btn-neo-outline btn-sm">View</a>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements" class="py-5 section bg-band text-center">
+    <div class="container">
+      <h2 class="fw-bold text-light section-heading mb-3"><span>Hall of Fame</span></h2>
+      <p class="text-muted-strong mb-4">Our proudest accomplishments.</p>
+      <div class="row g-4 justify-content-center">
+        <div class="col-6 col-md-3">
+          <div class="trophy card-panel card-neo text-center p-4">
+            <div class="trophy-ico mb-3" aria-hidden="true"></div>
+            <div class="text-light fw-bold">Regional Champions</div>
+            <div class="small text-muted-strong">2022</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="trophy card-panel card-neo text-center p-4">
+            <div class="trophy-ico mb-3" aria-hidden="true"></div>
+            <div class="text-light fw-bold">Community MVP</div>
+            <div class="small text-muted-strong">2024</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="trophy card-panel card-neo text-center p-4">
+            <div class="trophy-ico mb-3" aria-hidden="true"></div>
+            <div class="text-light fw-bold">Weeb of the Year</div>
+            <div class="small text-muted-strong">2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band text-center py-5">
+    <div class="container">
+      <h3 class="fw-bold text-light mb-3">Ready to join the battle?</h3>
+      <a href="#members" class="btn btn-neo btn-lg">Join Us</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-elev-2 text-white text-center py-4 neon-border-top">
+    <div class="container small">
+      <p class="mb-1">&copy; <span id="year"></span> BeyondControl. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Back-to-top -->
+  <button id="backToTop" class="btn btn-neo back-to-top" aria-label="Back to top">&#8679;</button>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script>
+  // Keep all logic in a single IIFE to avoid globals
+  (function(){
+    const nav = document.getElementById('mainNav');
+    const backToTop = document.getElementById('backToTop');
+    const getNavHeight = () => Math.round(nav.getBoundingClientRect().height);
+    const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+    const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+
+    function smoothScrollTo(y){
+      const startY=window.pageYOffset, dist=y-startY, dur=clamp(Math.abs(dist)/2.5,350,900);
+      let s=null; function step(ts){ if(!s) s=ts; const t=clamp((ts-s)/dur,0,1); window.scrollTo(0,Math.round(startY+dist*ease(t))); if(t<1) requestAnimationFrame(step); }
+      requestAnimationFrame(step);
+    }
+
+    // Anchor smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(link=>{
+      link.addEventListener('click',e=>{
+        const hash=link.getAttribute('href'); if(!hash||hash==="#") return; const target=document.querySelector(hash); if(!target) return;
+        e.preventDefault(); const y=Math.max(0, Math.floor(window.pageYOffset + target.getBoundingClientRect().top - (getNavHeight()+8)));
+        smoothScrollTo(y);
+        if(window.bootstrap){ document.querySelectorAll('.navbar-collapse.show').forEach(el=>bootstrap.Collapse.getOrCreateInstance(el).hide()); }
+      });
+    });
+
+    // Nav shrink + back to top
+    function updateNav(){ const sc=window.scrollY>8; nav.classList.toggle('nav-shrink',sc); nav.classList.toggle('nav-fat',!sc); backToTop.classList.toggle('show', window.scrollY>window.innerHeight*0.6); }
+    window.addEventListener('scroll',updateNav,{passive:true}); window.addEventListener('resize',updateNav); updateNav();
+
+    // ScrollSpy (guarded)
+    if(window.bootstrap && bootstrap.ScrollSpy){ new bootstrap.ScrollSpy(document.body,{target:'#mainNav',offset:getNavHeight()+8}); }
+
+    // -------- Members
+    const RAW_MEMBERS=`
+Musebreakz,Guild Leader
+Milo,Community Guardian
+Nari,Community Guardian
+Pixel,Community Guardian
+Vixen,Community Guardian
+AlabamaGG,Member
+Benjingle,Member
+Chiisai,Member
+CyelTM,Member
+Nighty,Senior
+DrLucha,Member
+EduriA,Member
+Fabled,Member
+Hadarr,Member
+Hellsing,Member
+HoardStuff,Member
+JellyBeans,Member
+Just imi,Member
+Krux,Member
+LastOneStanding,Member
+Liepsnele,Member
+Lorelaii,Member
+MasterChief,Senior
+Modeselektor,Member
+Nokah,Senior
+Nu11,Member
+Nuberu,Member
+Pioutsos,Member
+Rahz,Member
+RemoteWorker,Member
+Shakkaku,Member
+Shendoc,Member
+SikhAF,Member
+SirGrenth,Member
+Skk1p,Member
+StrepsiliaS,Member
+Vemoth,Member
+Waller Krise,Member
+Wareep,Member
+ZED,Member
+Zuignapje,Senior
+Merkent,Senior
+Iceb0x,Member
+Znuks,Member
+Andruel,Member
+Angband,Senior
+Asgorath,Member
+Azumii,Member
+Beni,Member
+Billie,Member
+CalQulator,Member
+Cindy,Senior
+Deathjesterx,Member
+DeathZonePT,Member
+Draehke,Senior
+DrefMart,Member
+EchoFx,Member
+Egeo,Member
+EimaiXalia,Senior
+Eledor,Member
+Essenke,Member
+FroneAndSkibidi,Member
+Fury,Senior
+GarraToxx,Member
+Gianluca,Member
+Helzyus,Member
+Himer,Senior
+Hitsutai,Member
+Jacino Leite Capelo Rego,Member
+JackTheStabber,Member
+Jarkas,Member
+KashimVonPika,Member
+Kerrigen,Member
+Leafar,Member
+Leonhart,Member
+MadTurnip,Member
+MenesSz,Community Guardian
+MrDOTZ,Community Guardian
+Nyalli,Member
+OFICER975,Member
+Painatal,Member
+Paladjin,Community Guardian
+Pamcham,Senior
+Rightnut,Member
+Rita,Member
+Ruff,Senior
+Sanomik,Member
+Scata,Senior
+SchadowDark,Member
+Seba,Member
+Skyaz,Senior
+Stormz,Member
+Stragrath,Senior
+Taskees,Member
+Tenkai,Member
+Th3Sorrow,Senior
+Tranack,Member
+V1s1g0th,Member
+Varga,Member
+Volder,Member
+Windfang,Member
+Wolfranium.,Member
+XeoN,Senior
+XinogarD,Senior
+Xiribita,Member
+xlegend4427,Member
+Yhhii,Member
+Zangarm,Member
+Zastarian,Member`.trim();
+
+    const ROLE_MAP={ 'guild leader':{filter:'leader',tagClass:'tag-leader',label:'Guild Leader'}, 'community guardian':{filter:'guardian',tagClass:'tag-guardian',label:'Community Guardian'}, 'senior':{filter:'senior',tagClass:'tag-senior',label:'Senior'}, 'member':{filter:'member',tagClass:'tag-member',label:'Member'} };
+    const norm=s=>String(s||'').trim();
+    const roleInfo=r=>ROLE_MAP[(norm(r).toLowerCase())]||{filter:'member',tagClass:'tag-member',label:norm(r)||'Member'};
+
+    let memberCards; // declared early to avoid TDZ
+    function buildMemberGrid(){
+      const grid=document.getElementById('memberGrid'); if(!grid) return;
+      const html=RAW_MEMBERS.split(/\r?\n/).map((line,i)=>{
+        const [name,role]=line.split(',').map(v=>norm(v)); const info=roleInfo(role);
+        const seed=encodeURIComponent((name||`m${i}`).toLowerCase());
+        const src=`https://picsum.photos/seed/${seed}/600/600`;
+        const src2=`https://picsum.photos/seed/${seed}/1200/1200`;
+        return `<div class="col-6 col-sm-4 col-lg-3" data-role="${info.filter}">
+          <a href="#" class="member-card neo-hover" data-bs-toggle="modal" data-bs-target="#memberModal" data-name="${name}" data-role="${info.label}" data-desc="Lorem ipsum dolor sit amet.">
+            <img src="${src}" srcset="${src} 1x, ${src2} 2x" alt="${name}" class="d-block w-100" loading="lazy" decoding="async">
+            <div class="member-overlay"><div class="member-name">${name}</div><div class="member-tags"><span class="tag ${info.tagClass}">${info.label}</span></div></div>
+          </a>
+        </div>`;
+      }).join('');
+      grid.innerHTML=html; memberCards=document.querySelectorAll('#memberGrid > [data-role]');
+    }
+    buildMemberGrid();
+
+    const memberBtns=document.querySelectorAll('.filter-btn');
+    memberBtns.forEach(btn=>btn.addEventListener('click',()=>{
+      memberBtns.forEach(b=>b.classList.remove('active')); btn.classList.add('active');
+      const f=btn.dataset.filter; memberCards.forEach(card=>{ card.style.display=(f==='all'||card.dataset.role===f)?'':'none'; });
+    }));
+
+    if(window.bootstrap){
+      const memberModal=document.getElementById('memberModal');
+      memberModal.addEventListener('show.bs.modal',e=>{
+        const t=e.relatedTarget; const name=t?.dataset.name||'Member'; const role=t?.dataset.role||'Role'; const desc=t?.dataset.desc||'Lorem ipsum.'; const img=t?.querySelector('img')?.src||'';
+        memberModal.querySelector('#memberName').textContent=name;
+        memberModal.querySelector('#memberRole').textContent=role;
+        memberModal.querySelector('#memberDesc').textContent=desc;
+        memberModal.querySelector('#memberImg').src=img;
+        memberModal.querySelector('#memberRole').className='badge bg-label '+role.toLowerCase();
+      });
+    }
+
+    // -------- Games
+    const GAMES=[
+      {t:'Aether Arena',g:'moba',lbl:'MOBA • PC',d:'Fast 5v5 lanes and clutch teamfights.',seed:'g1'},
+      {t:'Realm Online',g:'mmorpg',lbl:'MMORPG • PC',d:'Raids, crafting, and seasonal events.',seed:'g2'},
+      {t:'Nightfall Ops',g:'fps',lbl:'FPS • PC',d:'Tactical squads and high‑stakes extraction.',seed:'g3'},
+      {t:'Verdant Valley',g:'cosy',lbl:'COSY • PC',d:'Farming, fishing, and laid‑back co‑op.',seed:'g4'},
+      {t:'Iron Command',g:'strategy',lbl:'STRATEGY • PC',d:'Macro mastery and precision micro.',seed:'g5'},
+      {t:'Blue Realms',g:'mmorpg',lbl:'MMORPG • PC',d:'Open‑world exploration with dungeons.',seed:'g6'},
+      {t:'Zero Hour',g:'fps',lbl:'FPS • PC',d:'Defuse, breach, and clear.',seed:'g7'},
+      {t:'Mythic Lanes',g:'moba',lbl:'MOBA • PC',d:'Draft wild comps and out‑macro opponents.',seed:'g8'},
+      {t:'Starlit Shores',g:'cosy',lbl:'COSY • PC',d:'Relaxed island life with gentle co‑op.',seed:'g9'},
+      {t:'Hex Dominion',g:'strategy',lbl:'STRATEGY • PC',d:'Territory control with deep economy.',seed:'g10'},
+      {t:'Skyward Saga',g:'mmorpg',lbl:'MMORPG • PC',d:'Airship guilds and floating islands.',seed:'g11'},
+      {t:'Pulsefire',g:'fps',lbl:'FPS • PC',d:'Arena duels with crisp gunplay.',seed:'g12'}
+    ];
+
+    const gameGrid=document.getElementById('gameGrid');
+    const tpl=document.getElementById('gameCardTpl');
+    const frag=document.createDocumentFragment();
+    GAMES.forEach(x=>{
+      const n=tpl.content.cloneNode(true);
+      const col=n.querySelector('.col-sm-6');
+      col.setAttribute('data-genre',x.g);
+      const img=n.querySelector('img');
+      const src=`https://picsum.photos/seed/${x.seed}/800/450`;
+      const src2=`https://picsum.photos/seed/${x.seed}/1600/900`;
+      img.src=src; img.srcset=`${src} 1x, ${src2} 2x`; img.loading='lazy'; img.decoding='async'; img.alt=x.t;
+      n.querySelector('h5').textContent=x.t;
+      n.querySelector('.genre').textContent=x.lbl;
+      n.querySelector('.desc').textContent=x.d;
+      frag.appendChild(n);
+    });
+    gameGrid.appendChild(frag);
+
+    const gameBtns=document.querySelectorAll('.game-filter');
+    const gameCards=()=>gameGrid.querySelectorAll('[data-genre]');
+    gameBtns.forEach(btn=>btn.addEventListener('click',()=>{
+      gameBtns.forEach(b=>b.classList.remove('active')); btn.classList.add('active');
+      const f=btn.dataset.filter; gameCards().forEach(card=>{ card.style.display=(f==='all'||card.dataset.genre===f)?'':'none'; });
+    }));
+
+    // Back to top
+    backToTop.addEventListener('click',()=>smoothScrollTo(0));
+
+    // Footer year
+    const y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
+  })();
+  </script>
+</body>
+</html>
