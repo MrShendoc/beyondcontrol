@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,8 +8,7 @@
   <!-- Fonts & Bootstrap -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Inter:wght@400;600;800&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
   <!-- Site CSS -->
@@ -18,7 +16,6 @@
   <link rel="icon" href="data:,">
   <meta name="color-scheme" content="dark light">
 </head>
-
 <body class="theme-dark">
   <!-- Ambient background layers -->
   <div class="bg-grid" aria-hidden="true"></div>
@@ -26,14 +23,12 @@
   <div class="bg-scanlines" aria-hidden="true"></div>
 
   <!-- NAVBAR -->
-  <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark sticky-top nav-fat bg-elev-2 neon-border"
-    aria-label="Primary">
+  <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark sticky-top nav-fat bg-elev-2 neon-border" aria-label="Primary">
     <div class="container position-relative">
       <a class="navbar-brand mx-auto mx-lg-0 position-lg-absolute start-lg-50 translate-middle-lg-x" href="#home">
         <span class="brand-mark me-2"></span><span class="logo-text">BeyondControl</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
-        aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-center" id="navbarMain">
@@ -52,16 +47,14 @@
     <div class="container">
       <div class="hero-inner mx-auto">
         <div class="crest glow-pulse mb-4" aria-hidden="true"></div>
-        <h1 class="hero-title mb-3">All your <span class="animated-gradient">guild & gaming</span><br> in one place.
-        </h1>
+        <h1 class="hero-title mb-3">All your <span class="animated-gradient">guild & gaming</span><br> in one place.</h1>
         <p class="lead text-muted-strong mb-4">A cinematic hub for your squad — fast, focused, and future-proof.</p>
         <div class="d-flex justify-content-center gap-3 mb-4 flex-wrap">
           <a href="#members" class="btn btn-neo btn-lg">Meet the Members</a>
           <a href="#games" class="btn btn-neo-outline btn-lg">Explore Games</a>
         </div>
         <div class="hero-badges" aria-label="Highlights">
-          <span class="chip">No ads</span><span class="chip">Zero paywalls</span><span class="chip">Built for
-            squads</span>
+          <span class="chip">No ads</span><span class="chip">Zero paywalls</span><span class="chip">Built for squads</span>
         </div>
       </div>
     </div>
@@ -84,12 +77,6 @@
         </div>
       </div>
       <div class="row g-3" id="memberGrid"></div>
-
-      <!-- Show more Members -->
-      <div class="text-center mt-3">
-        <button id="memberShowMore" class="btn btn-neo-outline d-none">Show More</button>
-      </div>
-
     </div>
   </section>
 
@@ -112,36 +99,15 @@
               <span class="badge bg-label mb-2" id="memberRole">Role</span>
               <p class="text-muted-strong mb-4" id="memberDesc">Lorem ipsum dolor sit amet.</p>
               <div class="row g-3">
-                <div class="col-6">
-                  <div class="stat-box">
-                    <div class="stat-label">Games</div>
-                    <div class="stat-val">142</div>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="stat-box">
-                    <div class="stat-label">Win Rate</div>
-                    <div class="stat-val">58%</div>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="stat-box">
-                    <div class="stat-label">MVPs</div>
-                    <div class="stat-val">37</div>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="stat-box">
-                    <div class="stat-label">Achievements</div>
-                    <div class="stat-val">12</div>
-                  </div>
-                </div>
+                <div class="col-6"><div class="stat-box"><div class="stat-label">Games</div><div class="stat-val">142</div></div></div>
+                <div class="col-6"><div class="stat-box"><div class="stat-label">Win Rate</div><div class="stat-val">58%</div></div></div>
+                <div class="col-6"><div class="stat-box"><div class="stat-label">MVPs</div><div class="stat-val">37</div></div></div>
+                <div class="col-6"><div class="stat-box"><div class="stat-label">Achievements</div><div class="stat-val">12</div></div></div>
               </div>
             </div>
           </div>
         </div>
-        <div class="modal-footer border-0"><button class="btn btn-neo-outline" data-bs-dismiss="modal">Close</button>
-        </div>
+        <div class="modal-footer border-0"><button class="btn btn-neo-outline" data-bs-dismiss="modal">Close</button></div>
       </div>
     </div>
   </div>
@@ -164,29 +130,24 @@
         </div>
       </div>
 
-      <div class="row g-4" id="gameGrid"></div>
-
-      <!-- Show more -->
-      <div class="text-center mt-3">
-        <button id="gameShowMore" class="btn btn-neo-outline d-none">Show more</button>
-      </div>
-
-      <!-- 12 Cards -->
-      <template id="gameCardTpl">
-        <div class="col-sm-6 col-lg-4">
-          <div class="game-card card-panel card-neo h-100">
-            <div class="ratio ratio-16x9 rounded overflow-hidden border-0">
-              <img class="object-fit-cover d-block" alt="">
-            </div>
-            <div class="p-3">
-              <h5 class="text-light mb-1"></h5>
-              <div class="small text-muted-strong mb-2 genre"></div>
-              <p class="text-muted-strong mb-3 desc"></p>
-              <a href="#" class="btn btn-neo-outline btn-sm">View</a>
+      <div class="row g-4" id="gameGrid">
+        <!-- 12 Cards -->
+        <template id="gameCardTpl">
+          <div class="col-sm-6 col-lg-4">
+            <div class="game-card card-panel card-neo h-100">
+              <div class="ratio ratio-16x9 rounded overflow-hidden border-0">
+                <img class="object-fit-cover d-block" alt="">
+              </div>
+              <div class="p-3">
+                <h5 class="text-light mb-1"></h5>
+                <div class="small text-muted-strong mb-2 genre"></div>
+                <p class="text-muted-strong mb-3 desc"></p>
+                <a href="#" class="btn btn-neo-outline btn-sm">View</a>
+              </div>
             </div>
           </div>
-        </div>
-      </template>
+        </template>
+      </div>
     </div>
   </section>
 
@@ -237,41 +198,45 @@
 
   <!-- Site JS -->
   <script>
-    (function () {
-      const nav = document.getElementById('mainNav');
-      const backToTop = document.getElementById('backToTop');
-      const getNavHeight = () => Math.round(nav.getBoundingClientRect().height);
-      const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
-      const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  (function(){
+    const nav = document.getElementById('mainNav');
+    const backToTop = document.getElementById('backToTop');
+    const getNavHeight = () => Math.round(nav.getBoundingClientRect().height);
+    const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+    const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 
-      function smoothScrollTo(y) {
-        const startY = window.pageYOffset, dist = y - startY, dur = clamp(Math.abs(dist) / 2.5, 350, 900);
-        let s = null; function step(ts) { if (!s) s = ts; const t = clamp((ts - s) / dur, 0, 1); window.scrollTo(0, Math.round(startY + dist * ease(t))); if (t < 1) requestAnimationFrame(step); }
-        requestAnimationFrame(step);
-      }
+    function smoothScrollTo(y){
+      const startY=window.pageYOffset, dist=y-startY, dur=clamp(Math.abs(dist)/2.5,350,900);
+      let s=null; function step(ts){ if(!s) s=ts; const t=clamp((ts-s)/dur,0,1); window.scrollTo(0,Math.round(startY+dist*ease(t))); if(t<1) requestAnimationFrame(step); }
+      requestAnimationFrame(step);
+    }
 
-      // Anchor smooth scroll
-      document.querySelectorAll('a[href^="#"]').forEach(link => {
-        link.addEventListener('click', e => {
-          const hash = link.getAttribute('href'); if (!hash || hash === "#") return; const target = document.querySelector(hash); if (!target) return;
-          e.preventDefault(); const y = Math.max(0, Math.floor(window.pageYOffset + target.getBoundingClientRect().top - (getNavHeight() + 8)));
-          smoothScrollTo(y);
-          if (window.bootstrap) { document.querySelectorAll('.navbar-collapse.show').forEach(el => bootstrap.Collapse.getOrCreateInstance(el).hide()); }
-        });
+    // Anchor smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(link=>{
+      link.addEventListener('click',e=>{
+        const hash=link.getAttribute('href'); if(!hash||hash==="#") return; const target=document.querySelector(hash); if(!target) return;
+        e.preventDefault(); const y=Math.max(0, Math.floor(window.pageYOffset + target.getBoundingClientRect().top - (getNavHeight()+8)));
+        smoothScrollTo(y);
+        if(window.bootstrap){ document.querySelectorAll('.navbar-collapse.show').forEach(el=>bootstrap.Collapse.getOrCreateInstance(el).hide()); }
       });
+    });
 
-      // Nav shrink + back to top
-      function updateNav() { const sc = window.scrollY > 8; nav.classList.toggle('nav-shrink', sc); nav.classList.toggle('nav-fat', !sc); backToTop.classList.toggle('show', window.scrollY > window.innerHeight * 0.6); }
-      window.addEventListener('scroll', updateNav, { passive: true }); window.addEventListener('resize', updateNav); updateNav();
-      if (window.bootstrap && bootstrap.ScrollSpy) { new bootstrap.ScrollSpy(document.body, { target: '#mainNav', offset: getNavHeight() + 8 }); }
+    // Nav shrink + back to top
+    function updateNav(){ const sc=window.scrollY>8; nav.classList.toggle('nav-shrink',sc); nav.classList.toggle('nav-fat',!sc); backToTop.classList.toggle('show', window.scrollY>window.innerHeight*0.6); }
+    window.addEventListener('scroll',updateNav,{passive:true}); window.addEventListener('resize',updateNav); updateNav();
+    if(window.bootstrap && bootstrap.ScrollSpy){ new bootstrap.ScrollSpy(document.body,{target:'#mainNav',offset:getNavHeight()+8}); }
 
-      /* =======================
-         MEMBERS (LOCAL PORTRAITS)
-         ======================= */
-      const PORTRAIT_BASE = './assets/members/'; // relative path is safest across environments
-      const fileSlug = (name) => name.toLowerCase().replace(/[^a-z0-9]/g, '') + '.png'; // "Benjingle" -> "benjingle.png", "Wolfranium." -> "wolfranium.png", "Waller Krise" -> "wallerkrise.png"
+    /* =======================
+       MEMBERS (LOCAL PORTRAITS)
+       ======================= */
+    const PORTRAIT_BASE = './assets/members/'; // relative path is safest across environments
 
-      const RAW_MEMBERS = `
+    // "Benjingle" -> "benjingle.png", "Wolfranium." -> "wolfranium.png", "Waller Krise" -> "wallerkrise.png"
+    const fileSlug = (name) =>
+      name.toLowerCase()
+          .replace(/[^a-z0-9]/g,'') + '.png';
+
+    const RAW_MEMBERS=`
 Musebreakz,Guild Leader
 Milo,Community Guardian
 Nari,Community Guardian
@@ -382,277 +347,112 @@ Yhhii,Member
 Zangarm,Member
 Zastarian,Member`.trim();
 
-      const ROLE_MAP = {
-        'guild leader': { filter: 'leader', tagClass: 'tag-leader', label: 'Guild Leader' },
-        'community guardian': { filter: 'guardian', tagClass: 'tag-guardian', label: 'Community Guardian' },
-        'senior': { filter: 'senior', tagClass: 'tag-senior', label: 'Senior' },
-        'member': { filter: 'member', tagClass: 'tag-member', label: 'Member' }
-      };
-      const norm = s => String(s || '').trim();
-      const roleInfo = r => ROLE_MAP[(norm(r).toLowerCase())] || { filter: 'member', tagClass: 'tag-member', label: norm(r) || 'Member' };
+    const ROLE_MAP={ 'guild leader':{filter:'leader',tagClass:'tag-leader',label:'Guild Leader'}, 'community guardian':{filter:'guardian',tagClass:'tag-guardian',label:'Community Guardian'}, 'senior':{filter:'senior',tagClass:'tag-senior',label:'Senior'}, 'member':{filter:'member',tagClass:'tag-member',label:'Member'} };
+    const norm=s=>String(s||'').trim();
+    const roleInfo=r=>ROLE_MAP[(norm(r).toLowerCase())]||{filter:'member',tagClass:'tag-member',label:norm(r)||'Member'};
 
-      let memberCards; // NodeList after build
-      const showMoreBtn = document.getElementById('memberShowMore');
+    let memberCards;
+    function buildMemberGrid(){
+      const grid=document.getElementById('memberGrid'); if(!grid) return;
 
-      function buildMemberGrid() {
-        const grid = document.getElementById('memberGrid'); if (!grid) return;
-        const html = RAW_MEMBERS.split(/\r?\n/).map((line, i) => {
-          const [name, role] = line.split(',').map(v => norm(v));
-          const info = roleInfo(role);
-          const local = PORTRAIT_BASE + fileSlug(name);
-          const fallback = `https://picsum.photos/seed/${encodeURIComponent((name || 'm' + i).toLowerCase())}/600/600`;
-          return `<div class="col-6 col-sm-4 col-lg-3" data-role="${info.filter}">
-        <a href="#" class="member-card neo-hover" data-bs-toggle="modal" data-bs-target="#memberModal"
-           data-name="${name}" data-role="${info.label}" data-desc="Lorem ipsum dolor sit amet.">
-          <img src="${local}" alt="${name}" class="d-block w-100" loading="lazy" decoding="async"
-               onerror="this.onerror=null; this.src='${fallback}';">
-          <div class="member-overlay">
-            <div class="member-name">${name}</div>
-            <div class="member-tags"><span class="tag ${info.tagClass}">${info.label}</span></div>
-          </div>
-        </a>
-      </div>`;
-        }).join('');
-        grid.innerHTML = html;
-        memberCards = document.querySelectorAll('#memberGrid > [data-role]');
-      }
-      buildMemberGrid();
+      const html=RAW_MEMBERS.split(/\r?\n/).map((line,i)=>{
+        const [name,role]=line.split(',').map(v=>norm(v));
+        const info=roleInfo(role);
+        const slugFile = fileSlug(name);
+        const local = PORTRAIT_BASE + slugFile;
+        const fallback = `https://picsum.photos/seed/${encodeURIComponent((name||'m'+i).toLowerCase())}/600/600`;
 
-      // ====== Paging setup (4 rows at a time) ======
-      const ROWS_STEP = 2;
-      let currentFilter = (document.querySelector('.filter-btn.active')?.dataset.filter) || 'all';
-      let visibleLimit = 0;
+        return `<div class="col-6 col-sm-4 col-lg-3" data-role="${info.filter}">
+          <a href="#" class="member-card neo-hover" data-bs-toggle="modal" data-bs-target="#memberModal"
+             data-name="${name}" data-role="${info.label}" data-desc="Lorem ipsum dolor sit amet.">
+            <img src="${local}" alt="${name}" class="d-block w-100" loading="lazy" decoding="async"
+                 onerror="this.onerror=null; this.src='${fallback}';">
+            <div class="member-overlay">
+              <div class="member-name">${name}</div>
+              <div class="member-tags"><span class="tag ${info.tagClass}">${info.label}</span></div>
+            </div>
+          </a>
+        </div>`;
+      }).join('');
 
-      function colsPerRow() {
-        if (window.matchMedia('(min-width: 992px)').matches) return 4; // lg+
-        if (window.matchMedia('(min-width: 576px)').matches) return 3; // sm–md
-        return 2; // xs
-      }
-      function pageStep() { return ROWS_STEP * colsPerRow(); }
+      grid.innerHTML=html;
+      memberCards=document.querySelectorAll('#memberGrid > [data-role]');
+    }
+    buildMemberGrid();
 
-      function applyVisibility() {
-        const cards = Array.from(memberCards);
-        const inFilter = cards.filter(c => currentFilter === 'all' || c.dataset.role === currentFilter);
-        const outFilter = cards.filter(c => !(currentFilter === 'all' || c.dataset.role === currentFilter));
+    // Member filter buttons
+    const memberBtns=document.querySelectorAll('.filter-btn');
+    memberBtns.forEach(btn=>btn.addEventListener('click',()=>{
+      memberBtns.forEach(b=>b.classList.remove('active')); btn.classList.add('active');
+      const f=btn.dataset.filter; memberCards.forEach(card=>{ card.style.display=(f==='all'||card.dataset.role===f)?'':'none'; });
+    }));
 
-        // Always hide out-of-filter
-        outFilter.forEach(c => c.style.display = 'none');
-
-        // Show up to the current limit; animate items that are becoming visible now
-        const cols = colsPerRow();
-        inFilter.forEach((c, idx) => {
-          if (idx < visibleLimit) {
-            const wasHidden = (c.style.display === 'none');
-            c.style.display = '';
-            if (wasHidden) {
-              const card = c.querySelector('.member-card');
-              if (card) {
-                // restart animation
-                card.classList.remove('reveal'); void card.offsetWidth; // reflow
-                card.style.setProperty('--i', idx % cols); // optional for future stagger
-                card.classList.add('reveal');
-              }
-            }
-          } else {
-            c.style.display = 'none';
-          }
-        });
-
-        // Toggle Show more button
-        if (inFilter.length > visibleLimit) {
-          showMoreBtn.classList.remove('d-none');
-        } else {
-          showMoreBtn.classList.add('d-none');
-        }
-      }
-
-
-      function resetAndApply(newFilter) {
-        currentFilter = newFilter;
-        visibleLimit = pageStep();
-        // update active button styles
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        const activeBtn = document.querySelector(`.filter-btn[data-filter="${currentFilter}"]`);
-        if (activeBtn) activeBtn.classList.add('active');
-        applyVisibility();
-      }
-
-      // Initial apply: respect whatever is active at load (you set Guardians active)
-      resetAndApply(currentFilter);
-
-      // Show more click
-      showMoreBtn.addEventListener('click', () => {
-        visibleLimit += pageStep();
-        applyVisibility();
+    // Member modal
+    if(window.bootstrap){
+      const memberModal=document.getElementById('memberModal');
+      memberModal.addEventListener('show.bs.modal',e=>{
+        const t=e.relatedTarget;
+        const name=t?.dataset.name||'Member';
+        const role=t?.dataset.role||'Role';
+        const desc=t?.dataset.desc||'Lorem ipsum.';
+        const img=t?.querySelector('img')?.src||'';
+        memberModal.querySelector('#memberName').textContent=name;
+        memberModal.querySelector('#memberRole').textContent=role;
+        memberModal.querySelector('#memberDesc').textContent=desc;
+        memberModal.querySelector('#memberImg').src=img;
+        memberModal.querySelector('#memberRole').className='badge bg-label '+role.toLowerCase();
       });
+    }
 
-      // Filter buttons
-      const memberBtns = document.querySelectorAll('.filter-btn');
-      memberBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          resetAndApply(btn.dataset.filter);
-        });
-      });
+    /* =======================
+       GAMES (unchanged)
+       ======================= */
+    const GAMES=[
+      {t:'Aether Arena',g:'moba',lbl:'MOBA • PC',d:'Fast 5v5 lanes and clutch teamfights.',seed:'g1'},
+      {t:'Realm Online',g:'mmorpg',lbl:'MMORPG • PC',d:'Raids, crafting, and seasonal events.',seed:'g2'},
+      {t:'Nightfall Ops',g:'fps',lbl:'FPS • PC',d:'Tactical squads and high-stakes extraction.',seed:'g3'},
+      {t:'Verdant Valley',g:'cosy',lbl:'COSY • PC',d:'Farming, fishing, and laid-back co-op.',seed:'g4'},
+      {t:'Iron Command',g:'strategy',lbl:'STRATEGY • PC',d:'Macro mastery and precision micro.',seed:'g5'},
+      {t:'Blue Realms',g:'mmorpg',lbl:'MMORPG • PC',d:'Open-world exploration with dungeons.',seed:'g6'},
+      {t:'Zero Hour',g:'fps',lbl:'FPS • PC',d:'Defuse, breach, and clear.',seed:'g7'},
+      {t:'Mythic Lanes',g:'moba',lbl:'MOBA • PC',d:'Draft wild comps and out-macro opponents.',seed:'g8'},
+      {t:'Starlit Shores',g:'cosy',lbl:'COSY • PC',d:'Relaxed island life with gentle co-op.',seed:'g9'},
+      {t:'Hex Dominion',g:'strategy',lbl:'STRATEGY • PC',d:'Territory control with deep economy.',seed:'g10'},
+      {t:'Skyward Saga',g:'mmorpg',lbl:'MMORPG • PC',d:'Airship guilds and floating islands.',seed:'g11'},
+      {t:'Pulsefire',g:'fps',lbl:'FPS • PC',d:'Arena duels with crisp gunplay.',seed:'g12'}
+    ];
 
-      // Recalculate on resize (keeps item count consistent with new row width)
-      window.addEventListener('resize', () => {
-        const shownCount = visibleLimit;        // how many items currently visible
-        const newStep = pageStep();
-        // Adjust visibleLimit to the smallest multiple of newStep that >= shownCount
-        const multiples = Math.ceil(shownCount / newStep);
-        visibleLimit = Math.max(newStep, multiples * newStep);
-        applyVisibility();
-      });
+    const gameGrid=document.getElementById('gameGrid');
+    const tpl=document.getElementById('gameCardTpl');
+    const frag=document.createDocumentFragment();
+    GAMES.forEach(x=>{
+      const n=tpl.content.cloneNode(true);
+      const col=n.querySelector('.col-sm-6');
+      col.setAttribute('data-genre',x.g);
+      const img=n.querySelector('img');
+      const src=`https://picsum.photos/seed/${x.seed}/800/450`;
+      const src2=`https://picsum.photos/seed/${x.seed}/1600/900`;
+      img.src=src; img.srcset=`${src} 1x, ${src2} 2x`; img.loading='lazy'; img.decoding='async'; img.alt=x.t;
+      n.querySelector('h5').textContent=x.t;
+      n.querySelector('.genre').textContent=x.lbl;
+      n.querySelector('.desc').textContent=x.d;
+      frag.appendChild(n);
+    });
+    gameGrid.appendChild(frag);
 
-      // Member modal (unchanged)
-      if (window.bootstrap) {
-        const memberModal = document.getElementById('memberModal');
-        memberModal.addEventListener('show.bs.modal', e => {
-          const t = e.relatedTarget;
-          const name = t?.dataset.name || 'Member';
-          const role = t?.dataset.role || 'Role';
-          const desc = t?.dataset.desc || 'Lorem ipsum.';
-          const img = t?.querySelector('img')?.src || '';
-          memberModal.querySelector('#memberName').textContent = name;
-          memberModal.querySelector('#memberRole').textContent = role;
-          memberModal.querySelector('#memberDesc').textContent = desc;
-          memberModal.querySelector('#memberImg').src = img;
-          memberModal.querySelector('#memberRole').className = 'badge bg-label ' + role.toLowerCase();
-        });
-      }
+    const gameBtns=document.querySelectorAll('.game-filter');
+    const gameCards=()=>gameGrid.querySelectorAll('[data-genre]');
+    gameBtns.forEach(btn=>btn.addEventListener('click',()=>{
+      gameBtns.forEach(b=>b.classList.remove('active')); btn.classList.add('active');
+      const f=btn.dataset.filter; gameCards().forEach(card=>{ card.style.display=(f==='all'||card.dataset.genre===f)?'':'none'; });
+    }));
 
-      /* =======================
-         GAMES (unchanged)
-         ======================= */
-      const GAMES = [
-        { t: 'Aether Arena', g: 'moba', lbl: 'MOBA • PC', d: 'Fast 5v5 lanes and clutch teamfights.', seed: 'g1' },
-        { t: 'Realm Online', g: 'mmorpg', lbl: 'MMORPG • PC', d: 'Raids, crafting, and seasonal events.', seed: 'g2' },
-        { t: 'Nightfall Ops', g: 'fps', lbl: 'FPS • PC', d: 'Tactical squads and high-stakes extraction.', seed: 'g3' },
-        { t: 'Verdant Valley', g: 'cosy', lbl: 'COSY • PC', d: 'Farming, fishing, and laid-back co-op.', seed: 'g4' },
-        { t: 'Iron Command', g: 'strategy', lbl: 'STRATEGY • PC', d: 'Macro mastery and precision micro.', seed: 'g5' },
-        { t: 'Blue Realms', g: 'mmorpg', lbl: 'MMORPG • PC', d: 'Open-world exploration with dungeons.', seed: 'g6' },
-        { t: 'Zero Hour', g: 'fps', lbl: 'FPS • PC', d: 'Defuse, breach, and clear.', seed: 'g7' },
-        { t: 'Mythic Lanes', g: 'moba', lbl: 'MOBA • PC', d: 'Draft wild comps and out-macro opponents.', seed: 'g8' },
-        { t: 'Starlit Shores', g: 'cosy', lbl: 'COSY • PC', d: 'Relaxed island life with gentle co-op.', seed: 'g9' },
-        { t: 'Hex Dominion', g: 'strategy', lbl: 'STRATEGY • PC', d: 'Territory control with deep economy.', seed: 'g10' },
-        { t: 'Skyward Saga', g: 'mmorpg', lbl: 'MMORPG • PC', d: 'Airship guilds and floating islands.', seed: 'g11' },
-        { t: 'Pulsefire', g: 'fps', lbl: 'FPS • PC', d: 'Arena duels with crisp gunplay.', seed: 'g12' }
-      ];
+    // Back to top
+    backToTop.addEventListener('click',()=>smoothScrollTo(0));
 
-      const gameGrid = document.getElementById('gameGrid');
-      const tpl = document.getElementById('gameCardTpl');
-      const frag = document.createDocumentFragment();
-      GAMES.forEach(x => {
-        const n = tpl.content.cloneNode(true);
-        const col = n.querySelector('.col-sm-6');
-        col.setAttribute('data-genre', x.g);
-        const img = n.querySelector('img');
-        const src = `https://picsum.photos/seed/${x.seed}/800/450`;
-        const src2 = `https://picsum.photos/seed/${x.seed}/1600/900`;
-        img.src = src; img.srcset = `${src} 1x, ${src2} 2x`; img.loading = 'lazy'; img.decoding = 'async'; img.alt = x.t;
-        n.querySelector('h5').textContent = x.t;
-        n.querySelector('.genre').textContent = x.lbl;
-        n.querySelector('.desc').textContent = x.d;
-        frag.appendChild(n);
-      });
-      gameGrid.appendChild(frag);
-
-      const gameBtns = document.querySelectorAll('.game-filter');
-      const gameCards = () => gameGrid.querySelectorAll('[data-genre]');
-      gameBtns.forEach(btn => btn.addEventListener('click', () => {
-        gameBtns.forEach(b => b.classList.remove('active')); btn.classList.add('active');
-        const f = btn.dataset.filter; gameCards().forEach(card => { card.style.display = (f === 'all' || card.dataset.genre === f) ? '' : 'none'; });
-      }));
-
-      // ====== GAMES SHOW MORE ======
-      const gameShowMoreBtn = document.getElementById('gameShowMore');
-      const gameCardsAll = Array.from(document.querySelectorAll('#gameGrid > [data-genre]'));
-      let currentGameFilter = 'all';
-      let visibleGamesLimit = 0;
-      const GAME_ROWS_STEP = 2; // how many rows to load at once
-
-      function colsPerRowGames() {
-        if (window.matchMedia('(min-width: 992px)').matches) return 3; // lg
-        if (window.matchMedia('(min-width: 576px)').matches) return 2; // sm–md
-        return 1;
-      }
-      function pageStepGames() { return GAME_ROWS_STEP * colsPerRowGames(); }
-
-      function applyGameVisibility() {
-        const filtered = gameCardsAll.filter(c => currentGameFilter === 'all' || c.dataset.genre === currentGameFilter);
-        const hidden = gameCardsAll.filter(c => !(currentGameFilter === 'all' || c.dataset.genre === currentGameFilter));
-
-        // hide out-of-filter
-        hidden.forEach(c => c.style.display = 'none');
-
-        // show with reveal animation when newly visible
-        const gCols = colsPerRowGames();
-        filtered.forEach((c, i) => {
-          if (i < visibleGamesLimit) {
-            const wasHidden = (c.style.display === 'none');
-            c.style.display = '';
-            if (wasHidden) {
-              const card = c.querySelector('.game-card');
-              if (card) {
-                card.classList.remove('reveal'); void card.offsetWidth; // reflow
-                card.style.setProperty('--i', i % gCols);
-                card.classList.add('reveal');
-              }
-            }
-          } else {
-            c.style.display = 'none';
-          }
-        });
-
-        // button text / visibility
-        if (filtered.length > visibleGamesLimit) {
-          gameShowMoreBtn.classList.remove('d-none');
-          gameShowMoreBtn.textContent =
-            (filtered.length <= visibleGamesLimit + pageStepGames()) ? 'Show all' : 'Show more';
-        } else {
-          gameShowMoreBtn.classList.add('d-none');
-        }
-      }
-
-      function resetGames(filter) {
-        currentGameFilter = filter;
-        visibleGamesLimit = pageStepGames();
-        applyGameVisibility();
-      }
-
-      // initialize
-      resetGames('all');
-
-      // “Show more” click
-      gameShowMoreBtn.addEventListener('click', () => {
-        visibleGamesLimit += pageStepGames();
-        applyGameVisibility();
-      });
-
-      // update when user filters
-      document.querySelectorAll('.game-filter').forEach(btn => {
-        btn.addEventListener('click', () => {
-          resetGames(btn.dataset.filter);
-        });
-      });
-
-      // adapt on resize
-      window.addEventListener('resize', () => {
-        const shown = visibleGamesLimit;
-        const newStep = pageStepGames();
-        const multiples = Math.ceil(shown / newStep);
-        visibleGamesLimit = Math.max(newStep, multiples * newStep);
-        applyGameVisibility();
-      });
-
-
-      // Back to top
-      backToTop.addEventListener('click', () => smoothScrollTo(0));
-
-      // Footer year
-      const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
-    })();
+    // Footer year
+    const y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
+  })();
   </script>
 </body>
-
 </html>
