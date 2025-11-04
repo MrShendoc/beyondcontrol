@@ -1,0 +1,1 @@
+Place member portraits here (lowercase, no spaces). Supported: .png, .webp, .jpg
