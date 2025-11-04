@@ -562,3 +562,16 @@ body { padding-top: calc(var(--banner-h) + 0px); }
 .recruit-banner:hover .rb-track{
   animation-play-state: running !important;
 }
+
+/* === Marquee: force RIGHT → LEFT and seamless loop === */
+.recruit-banner .rb-track{
+  animation-name: rb-marquee-rtl2 !important;
+  animation-direction: normal !important;
+  transform: translateZ(0);
+}
+
+/* Start full, move from 0 → -50% (track contains duplicates) */
+@keyframes rb-marquee-rtl2 {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

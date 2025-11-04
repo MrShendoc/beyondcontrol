@@ -673,6 +673,40 @@ Zastarian,Member`.trim();
       const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
     })();
   </script>
+  <script>
+(function(){
+  // --- Recruitment banner auto-fill to avoid gaps ---
+  const inner = document.querySelector('.recruit-banner .rb-inner');
+  const track = document.querySelector('.recruit-banner .rb-track');
+  if (inner && track) {
+    // Capture the base cycle (what you already have in HTML)
+    const baseHTML = track.innerHTML;
+
+    // If the track isn't wide enough to cover at least 2x the container,
+    // keep appending another cycle. This guarantees it starts "full" and stays seamless.
+    let safety = 0;
+    const needWidth = () => inner.offsetWidth * 2; // target at least 2x container width
+    while (track.scrollWidth < needWidth() && safety < 6) {
+      track.insertAdjacentHTML('beforeend', baseHTML);
+      safety++;
+    }
+
+    // Re-check on resize (rare edge case when window grows a lot)
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        let guard = 0;
+        while (track.scrollWidth < needWidth() && guard < 4) {
+          track.insertAdjacentHTML('beforeend', baseHTML);
+          guard++;
+        }
+      }, 150);
+    }, { passive: true });
+  }
+})();
+</script>
+
 </body>
 
 </html>
