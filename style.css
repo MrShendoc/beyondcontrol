@@ -471,27 +471,9 @@ img {
     will-change: opacity, transform;
 }
 
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    .reveal {
-        animation: none !important;
-    }
-}
-
-
 /* Footer */
 footer {
     border-top: 1px solid var(--line)
-}
-
-/* Motion respect */
-@media (prefers-reduced-motion:reduce) {
-    * {
-        animation-duration: .001ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .001ms !important;
-        scroll-behavior: auto !important
-    }
 }
 
 /* Responsive tweaks */
@@ -505,4 +487,78 @@ footer {
     .hero-title {
         font-size: clamp(1.8rem, 7vw, 2.4rem)
     }
+}
+
+/* ===== Recruitment Banner (always on, above navbar) ===== */
+:root { --banner-h: 44px; }
+
+/* Don’t change existing rules; just add offsets so nothing hides under the banner */
+body { padding-top: calc(var(--banner-h) + 0px); }
+.navbar.sticky-top { top: var(--banner-h); }
+
+.recruit-banner{
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: var(--banner-h);
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(47,185,255,.95), rgba(184,108,255,.95));
+  color: #071218;
+  z-index: 1080; /* above your sticky navbar */
+  box-shadow: 0 6px 20px rgba(0,0,0,.35);
+  border-bottom: 1px solid rgba(255,255,255,.25);
+}
+
+.recruit-banner .rb-inner{
+  flex: 1 1 auto;
+  overflow: hidden;
+  /* fade edges for a clean loop */
+  mask-image: linear-gradient(90deg, transparent 0, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, black 8%, black 92%, transparent 100%);
+}
+
+.recruit-banner .rb-track{
+  display: inline-block;
+  white-space: nowrap;
+  animation: rb-marquee 22s linear infinite;
+  font-weight: 800;
+  letter-spacing: .2px;
+  will-change: transform;
+}
+
+.recruit-banner .rb-item{ padding: 0 .85rem; }
+.recruit-banner .rb-sep{ opacity: .7; padding: 0 .5rem; }
+
+@keyframes rb-marquee{
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* duplicated content makes it seamless */
+}
+
+/* === Reverse marquee direction (float left → right) === */
+.recruit-banner .rb-track {
+  animation-direction: reverse; /* reverses movement */
+}
+
+@keyframes rb-marquee {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+/* ==== Force marquee to flow LEFT → RIGHT (additive override) ==== */
+@keyframes rb-marquee-rtl {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+/* Use the new keyframes and keep it running */
+.recruit-banner .rb-track{
+  animation-name: rb-marquee-rtl !important;
+  animation-direction: normal !important;
+  will-change: transform;
+  transform: translateZ(0); /* safari/gpu nudge */
+}
+
+/* Stop pausing on hover (this was making it appear "frozen") */
+.recruit-banner:hover .rb-track{
+  animation-play-state: running !important;
 }
